@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-	<title>Главная</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20221127170147">
-	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+@@include('html/_head.htm',{
+"title":"Главная"
+})
 
 <body>
 	<div class="wrapper">
-		<header class="header">
-			<div class="header__container">
-				<div class="header__body">
-					<div class="header__logo">
-						<picture><source srcset="img/ecoco_logo.webp" type="image/webp"><img src="img/ecoco_logo.png" alt="логотип Ecoco"></picture>
-					</div>
-					<div class="header__phone"><span>+38 </span> 096 519 81 33</div>
-				</div>
-			</div>
-		</header>
+		@@include('html/_header.htm',{})
 		<main class="page">
 			<section class="page__product product">
 				<div class="product__container">
@@ -34,7 +17,7 @@
 						<a href="" data-da=".product__image, 767.98" class="product__button button">Заказать</a>
 					</div>
 					<div class="product__image">
-						<picture><source srcset="img/ecoco.webp" type="image/webp"><img src="img/ecoco.jpg" alt="вращающийся поднос для специй" class="product__img"></picture>
+						<img src="img/ecoco.jpg" alt="вращающийся поднос для специй" class="product__img">
 					</div>
 				</div>
 			</section>
@@ -44,12 +27,12 @@
 			</section>
 			<section class="page__use use">
 				<div class="use__container">
-					<h2 class="use__title title">Використання</h2>
+					<!-- <h2 class="use__title title">Використання</h2> -->
 					<div class="use__row">
 						<div class="use__item">
 							<div class=" item-use">
 								<div class="item-use__image">
-									<picture><source srcset="img/kitchen.webp" type="image/webp"><img class="item-use__img" src="img/kitchen.jpg" alt=""></picture>
+									<img class="item-use__img" src="@img/kitchen.jpg" alt="">
 								</div>
 								<div class="item-use__name">Для кухні</div>
 							</div>
@@ -57,15 +40,15 @@
 						<div class="use__item">
 							<div class=" item-use">
 								<div class="item-use__image">
-									<picture><source srcset="img/bathroom.webp" type="image/webp"><img class="item-use__img" src="img/bathroom.jpg" alt=""></picture>
+									<img class="item-use__img" src="@img/bathroom.jpg" alt="">
 								</div>
-								<div class="item-use__name">Для ванної кімнати</div>
+								<div class="item-use__name">Для ванної</div>
 							</div>
 						</div>
 						<div class="use__item">
 							<div class="item-use">
 								<div class="item-use__image">
-									<picture><source srcset="img/fruit.webp" type="image/webp"><img class="item-use__img" src="img/fruit.jpg" alt=""></picture>
+									<img class="item-use__img" src="@img/fruit.jpg" alt="">
 								</div>
 								<div class="item-use__name">Для фруктів</div>
 							</div>
@@ -73,16 +56,76 @@
 						<div class="use__item">
 							<div class="item-use">
 								<div class="item-use__image">
-									<picture><source srcset="img/cosmetics.webp" type="image/webp"><img class="item-use__img" src="img/cosmetics.jpg" alt=""></picture>
+									<img class="item-use__img" src="@img/cosmetics.jpg" alt="">
 								</div>
 								<div class="item-use__name">Для косметики</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
 
+
+
+			<section class="page__video video">
+				<div class="video__container">
+					<div data-watch="video" class="video__video-module video-module">
+						<video id="video-module" data-src="files/video.mp4" class="video-module__item"></video>
+					</div>
+					<div class="video__text">
+						<p class="video__text">Вращающийся на 360 градусов поднос из пластика найдет широкое применение.</p>
+						<p class="video__text">Подставка может быть использована как фруктовница, подставка для специй,
+							кухонный органайзер для хранения кухонной утвари и кухонных принадлежностей, органайзер для
+							косметики</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__specifications specifications">
+				<div class="specifications__container">
+					<!-- <h2 class="specifications__title title">Технічні характеристики</h2> -->
+					<div class="specifications__items">
+						<div class="specifications__item">
+							<div class="specifications__content">
+								<h3 class="specifications__sub-title">Плавне обертання</h3>
+								<div class="specifications__text">У конструкції використовується 6 гладких сталевих
+										кульок, яки
+									забезпечують планне ковзання та відсутність іржі</div>
+							</div>
+							<div class="specifications__image">
+								<img class="specifications__img" src="@img/steel-balls.jpg"
+									alt="стальные шарики в констукции подставки">
+							</div>
+						</div>
+						<div class="specifications__item specifications__item_wide">
+							<div class="specifications__image">
+								<img class="specifications__img" src="@img/building.jpg" alt="строение подставки">
+							</div>
+						</div>
+						<div class="specifications__item">
+							<div class="specifications__content">
+								<h3 class="specifications__sub-title">Стабільне крутіння</h3>
+								<div class="specifications__text">Нековзні силіконові накладки дозволяють стійко
+									стояти на поверхні
+								</div>
+							</div>
+							<div class="specifications__image">
+								<img class="specifications__img" src="@img/down.jpg"
+									alt="силиконовые накладки на дне подставки">
+							</div>
+					</div>
 
 				</div>
 			</section>
+
+			<section class="page__before-after before-after">
+				<div class="before-after__image">
+					<div class="before-after__container">
+						<img src="@img/before-after.jpg" alt="до и после использования подноса">
+					</div>
+				</div>
+			</section>
+
 			<section class="page__properties properties">
 				<div class="properties__container">
 					<div class="properties__title title">
@@ -90,31 +133,12 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__specifications specifications">
-				<div class="specifications__container">
-					<h2 class="specifications__title title">Технічні характеристики</h2>
-
-				</div>
-			</section>
 
 		</main>
-		<footer class="footer">
-			<div class="footer__container">
-
-			</div>
-		</footer>
+		@@include('html/_footer.htm',{})
 	</div>
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
-</div> -->
-	<script src="js/app.min.js?_v=20221127170147"></script>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
 </body>
 
 </html>
